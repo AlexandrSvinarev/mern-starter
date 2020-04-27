@@ -13,6 +13,9 @@ import { fetchPost } from '../../PostActions';
 // Import Selectors
 import { getPost } from '../../PostReducer';
 
+// Import Comments
+import CommentList from "../../../CommentList/components/CommentList";
+
 export function PostDetailPage(props) {
   return (
     <div>
@@ -21,6 +24,7 @@ export function PostDetailPage(props) {
         <h3 className={styles['post-title']}>{props.post.title}</h3>
         <p className={styles['author-name']}><FormattedMessage id="by" /> {props.post.name}</p>
         <p className={styles['post-desc']}>{props.post.content}</p>
+        <CommentList cuid={props.params.cuid} />
       </div>
     </div>
   );

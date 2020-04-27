@@ -72,7 +72,6 @@ export function deletePost(req, res) {
     if (err) {
       res.status(500).send(err);
     }
-
     post.remove(() => {
       res.status(200).end();
     });

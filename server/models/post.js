@@ -11,10 +11,5 @@ const postSchema = new Schema({
   dateAdded: { type: 'Date', default: Date.now, required: true },
 });
 
-postSchema.pre("remove", (next) => {
-  Comment.deleteMany({ cuid: this.cuid });
-
-  next();
-});
 
 export default mongoose.model('Post', postSchema);
